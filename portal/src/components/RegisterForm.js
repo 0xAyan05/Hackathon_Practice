@@ -53,17 +53,6 @@ const RegisterForm = () => {
             onChange={handlePasswordChange}
           />
         </div>
-        <div className="form-control">
-          <label htmlFor="email">Email:</label>
-          <br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
         <br />
         <button type="submit">Register</button>
       </form>
