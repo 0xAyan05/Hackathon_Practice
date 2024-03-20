@@ -13,10 +13,6 @@ const RegisterForm = () => {
     setPassword(event.target.value);
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -24,7 +20,7 @@ const RegisterForm = () => {
     console.log("Password:", password);
     console.log("Email:", email);
 
-    // Additional logic for registration
+   
   };
 
   return (
