@@ -27,10 +27,10 @@ const LoginForm = () => {
 
   return (
     <div className="container">
-      <h1>Sign In</h1>
-      <p>Using your DWCL Account</p>
       {showRegisterForm ? null : (
         <form onSubmit={handleSubmit}>
+          <h1>Sign In</h1>
+          <p>Using your DWCL Account</p>
           <div className="form-control">
             <label htmlFor="username">Username:</label>
             <br />
@@ -43,6 +43,7 @@ const LoginForm = () => {
             />
           </div>
           <div className="form-control">
+          
             <label htmlFor="password">Password:</label>
             <br />
             <input

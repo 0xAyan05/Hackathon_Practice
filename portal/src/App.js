@@ -7,7 +7,6 @@ import "./index.css";
 const App = () => {
   return (
     <div>
-      <h1>Welcome to DWCL Portal</h1>
       <LoginForm />
     </div>
   );

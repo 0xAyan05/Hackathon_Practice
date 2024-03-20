@@ -23,7 +23,8 @@ const RegisterForm = () => {
 
   return (
     <div className="container">
-      <h2>Registration</h2>
+      <h1>Registration</h1>
+          <p>Fill this Up</p>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="username">Username:</label>
