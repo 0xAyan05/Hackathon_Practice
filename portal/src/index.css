@@ -15,9 +15,9 @@ body {
 
 .landscape-container {
   display: flex;
-  justify-content: space-between; 
-  max-width: 1000px; 
-  margin: 0 auto; 
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 
@@ -36,16 +36,17 @@ body {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #dddfe2;
   border-radius: 5px;
-  box-sizing: border-box; 
+  background-color: #f0f2f5;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  width: 30%;
+  padding: 10px;
+  background-color: #1877f2;
   color: #fff;
   border: none;
   border-radius: 5px;
