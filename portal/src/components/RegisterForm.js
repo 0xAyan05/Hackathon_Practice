@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -18,7 +17,6 @@ const RegisterForm = () => {
 
     console.log("Username:", username);
     console.log("Password:", password);
-    console.log("Email:", email);
 
    
   };
