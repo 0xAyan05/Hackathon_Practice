@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import RegisterForm from "./RegisterForm"; 
+import RegisterForm from "./RegisterForm";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showRegisterForm, setShowRegisterForm] = useState(false); 
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -15,7 +15,7 @@ const LoginForm = () => {
   };
 
   const handleRegisterClick = () => {
-    setShowRegisterForm(true); 
+    setShowRegisterForm(true);
   };
 
   const handleSubmit = (event) => {
@@ -27,7 +27,8 @@ const LoginForm = () => {
 
   return (
     <div className="container">
-      <h2>Student/Admin Login</h2>
+      <h1>Sign In</h1>
+      <p>Using your DWCL Account</p>
       {showRegisterForm ? null : (
         <form onSubmit={handleSubmit}>
           <div className="form-control">
@@ -54,9 +55,19 @@ const LoginForm = () => {
           </div>
           <br />
           <button type="submit">Login</button>
-          <button type="button" onClick={handleRegisterClick}>
-            Register
-          </button>
+          <div style={{ marginTop: "10px" }}>
+            <button type="button" onClick={handleRegisterClick}>
+              Register
+            </button>
+
+            <div style={{ marginTop: "10px" }}>
+              <a href="#old-student">Old Student</a>
+              <p>For old students and new students with DWCL siblings</p>
+              <a href="#new-applicant">New Applicant and Transferee</a>
+              <p>For new students without DWCL siblings</p>
+              <a href="#forgot-password">Forgot Password</a>
+            </div>
+          </div>
         </form>
       )}
       {showRegisterForm && <RegisterForm />}

@@ -6,7 +6,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d0e8f2; 
+  background-color: #d0e8f2;
 }
 
 body {
@@ -19,11 +19,20 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .form-control {
   margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; 
 }
 
 button {
@@ -43,4 +52,15 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+a:hover {
+  color: #0056b3;
 }
