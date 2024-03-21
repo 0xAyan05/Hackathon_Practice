@@ -1,8 +1,46 @@
 body{
-    
+    margin: 0;
 }
 
-div{
-    
+p{
+    margin: 0;
+}
+
+.title{
+    font-size: 2em;
+}
+
+#navbar{
+    position: fixed;
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    background-color: cadetblue;
+    z-index: 1;
+}
+
+#frame{
+    display: block;   
+}
+
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+#addition{
+    position: relative;
+    top: 10vh;
+    width: 25vw;
+    height: 25vh;
+    background-color: aqua;
+}
+  
+#page2{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: yellow;
 }
 
