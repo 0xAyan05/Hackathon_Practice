@@ -73,3 +73,10 @@ a {
 a:hover {
   color: #0056b3;
 }
+
+.logo {
+  background-size: cover;
+  margin: auto 0;
+  max-width: 20%;
+  height: auto;
+}

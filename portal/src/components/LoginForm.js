@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-//hello
+
+
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +19,8 @@ const LoginForm = () => {
     console.log("Username:", username);
     console.log("Password:", password);
   };
+
+
 
   return (
     <div className="container">
@@ -50,11 +53,11 @@ const LoginForm = () => {
         <button type="submit">Login</button>
         <div style={{ marginTop: "10px" }}>
           <div style={{ marginTop: "10px" }}>
-            <a href="#">Old Student</a>
+            <a href="#old student">Old Student</a>
             <p>For old students and new students with DWCL siblings</p>
-            <a href="#">New Applicant and Transferee</a>
+            <a href="#new student">New Applicant and Transferee</a>
             <p>For new students without DWCL siblings</p>
-            <a href="#">Forgot Password</a>
+            <a href="#forgot password">Forgot Password</a>
           </div>
         </div>
       </form>
