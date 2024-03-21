@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./componentz/LoginForm";
 import Logo from "./assets/dwcl_logo.png";
 import "./index.css";
+
 
 const App = () => {
   return (
