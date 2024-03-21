@@ -50,11 +50,11 @@ const LoginForm = () => {
         <button type="submit">Login</button>
         <div style={{ marginTop: "10px" }}>
           <div style={{ marginTop: "10px" }}>
-            <a href="#old-student">Old Student</a>
+            <a href="#">Old Student</a>
             <p>For old students and new students with DWCL siblings</p>
-            <a href="#new-applicant">New Applicant and Transferee</a>
+            <a href="#">New Applicant and Transferee</a>
             <p>For new students without DWCL siblings</p>
-            <a href="#forgot-password">Forgot Password</a>
+            <a href="#">Forgot Password</a>
           </div>
         </div>
       </form>
