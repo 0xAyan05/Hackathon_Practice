@@ -83,7 +83,7 @@ body {
     font-size: large;
     font-weight: bolder;
     text-align: center;
-    
+    text-overflow: ellipsis;
 }
 
 .year {
