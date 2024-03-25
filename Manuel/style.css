@@ -1,51 +1,103 @@
+
 body {
+    overflow-x: hidden;
     min-height: 100vh;
-    margin: 5px;
-    padding: 5px;
     height: auto;
-    display: flex;
-    justify-content: center;
+    margin: 0px;
+    padding: 0px;
     background-image: linear-gradient(to bottom right,#2b124c, rgb(0, 255, 255));
 }
-#display-poster{
-    width: 33%;
+nav {
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    display: flex;
+    background-color: #190019;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 10px 10px 8px #0000007f;
+}
+nav div {
+    font-size: 1.5rem;
+}
+#user{
+    width: 2rem;
 }
 .search-container{
-    width: 20rem;
+    width: 40rem;
     margin: 1rem;
-    height: 2.5rem;
+    height: 3rem;
     display: flex;
     gap: 15px;
-    
 }
-#display-container{
-    width: 85%;
-    padding: 3rem;
-    overflow: hidden;
-    border-radius: 10px;
-    height: fit-content;
-    background-color: aliceblue;
-    
-    
+section{
+    display: flex;
+}
+#side-bar{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    width: 14%;
+    height: 84.7vh;
+    background-color: #190019cf;
+}
+#root {
+    position: absolute;
+    padding: 1rem;
+    background-color: transparent;
+    width: 81.7%;
+    max-height: 84.7vh;
+    height: 84.7vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    right: 0px;
+}
+.options{
+    border-radius: 5px;
+    margin: 10px 0px;
+    width: 100%;
+    height: 2.5rem;
+    background-color: #9c019c3e;
+}
+#display-poster{
+    width: 20rem;
+    height: 30rem;
 }
 
+#display-container{
+    width: 86.5%;
+    height: 76vh;
+    padding: 2em 5rem;
+    display: flex;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
 #display-title{
-    font-size: 1.8rem;
+    font-size: 180%;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
     font-weight: 900;
 }
 #plot{
     width: 90%;
     margin-bottom: 1rem;
-    
 }
 #searchbox {
     width: 100%;
     font-size: 1rem;
     border-radius: 10px;
-    color: #fff;
-    background-color: #190019;
+    padding: 0px 1rem;
     border: transparent;
-    
+    background-color: #9c019c3e;
 }
 #submit {
     width: 20%;
@@ -53,47 +105,52 @@ body {
     background-color: aqua;
     border: transparent;
 }
-#root {
-    padding: 1rem;
-    background-color: transparent;
-    width: 80%;
-    height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    overflow: hidden;
-    
-    
-}
 #root .movie-containers {
     border-radius: 10px;
     padding: 10px;
-    max-height: 30rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color:#190019 ;
     text-decoration: none;
-    color: rgb(0, 255, 255);
+    color: #00ffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
 }
-
+.left {
+    width: 100rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 .posters {
-    width: 100%;
+    height: 15rem;
     border-radius: 5px;
-    max-height: 14rem;
+    width: 12.5rem;
     margin-top: 10px;
 }
 .title {
-    font-size: large;
+    display: flex;
+    font-size: 17px;
     font-weight: bolder;
     text-align: center;
-    text-overflow: ellipsis;
+    height: 2.6rem;
+    overflow: hidden;
 }
-/* <<<<<<< HEAD
-=======
-
-.year {
- text-align: center;
- 
+.year{
+    padding: 5px;
+    font-size: 12px;
+    height: 10px;
+    overflow: hidden;
 }
->>>>>>> 11d0282029265b66c30c19080ef769e66abbd69a */
+#watch{
+    position: absolute;
+    margin-top: 5rem;
+    text-decoration: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #190019;
+}

@@ -1,4 +1,5 @@
 const root = document.getElementById('root');
+const sidebar = document.getElementById('side-bar')
 class MovieDisplay {
     constructor(movie){
         console.log(movie.fullmovieurl)
@@ -10,12 +11,17 @@ class MovieDisplay {
             if(i<movie.genres.length-1) genres += ', '
         })    
        root.innerHTML = `<div id="display-container" name="${movie.id}">
-            <div id="display-title">Title: ${movie.title}</div>
-            <img id="display-poster" src="${movie.profile_pictureURL}" alt="movie poster" />
-            <div id="plot" >Plot: ${movie.overview}</div>
-            <div id="genre" >Genre: ${genres}</div>
-            <div id="released" >Released: ${movie.release_date}</div>
-            <div id="runtime" >Runtime: ${movie.runtime}</div>
+           <div class="left">
+                <div id="display-title">${movie.title}</div>
+                <img id="display-poster" src="${movie.profile_pictureURL}" alt="movie poster" />
+           </div>
+            <div class="right">
+                <div id="plot" >Plot: ${movie.overview}</div>
+                <div id="genre" >Genre: ${genres}</div>
+                <div id="released" >Released: ${movie.release_date}</div>
+                <div id="runtime" >Runtime: ${movie.runtime}</div>
+                <a id="watch" href="show.html">Watch Now</a>
+            </div>
             </div>`
     }
 }
