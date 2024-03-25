@@ -1,91 +1,81 @@
-
 const root = document.getElementById('root');
-
 class MovieDisplay {
     constructor(movie){
-        root.style.display = 'block';
-        root.style.height = '100dvh';
-    
-       root.innerHTML = `<div id="display-container">
-            <div id="display-title">Title: ${movie.Title}</div>
-            <img id="display-poster" src="${movie.Poster}" alt="movie poster" />
-            <div id="plot" >Plot: ${movie.Plot}</div>
-            <div id="genre" >Genre: ${movie.Genre}</div>
-            <div id="released" >Released: ${movie.Released}</div>
-            <div id="runtime" >Runtime: ${movie.Runtime}</div>
-            <div id="actors" >Actors: ${movie.Actors}</div>
-            </div>`;
+        console.log(movie.fullmovieurl)
+        root.style.display = 'block'
+        root.style.height = '100dvh'
+        let genres = ""
+        movie.genres.forEach((e,i) => {
+            genres += `${e.name}`
+            if(i<movie.genres.length-1) genres += ', '
+        })    
+       root.innerHTML = `<div id="display-container" name="${movie.id}">
+            <div id="display-title">Title: ${movie.title}</div>
+            <img id="display-poster" src="${movie.profile_pictureURL}" alt="movie poster" />
+            <div id="plot" >Plot: ${movie.overview}</div>
+            <div id="genre" >Genre: ${genres}</div>
+            <div id="released" >Released: ${movie.release_date}</div>
+            <div id="runtime" >Runtime: ${movie.runtime}</div>
+            </div>`
     }
 }
 class Movie {
     constructor(data){
-        root.style.display = 'grid';
-        root.style.height = 'fit-content';
+        root.style.display = 'grid'
+        root.style.height = 'fit-content'
 
         root.innerHTML += `<div class="movie-containers" >
-                    <div class="title" >${data.Title}</div> 
-                    <img class="posters" src="${data.Poster}" alt="movie poster" />
-                    <div class="year" >${data.Year}</div>
-                    </div>`;
+                    <div class="title" >${data.title}</div> 
+                    <img class="posters" src="${data.profile_picture_url}" alt="movie poster" />
+                    <div class="year" >${data.release_date}</div>
+                    </div>`
     }
 }
 
-function getDisplay(title){
-    root.innerHTML = "";
-    fetch(`http://www.omdbapi.com/?t=${title}&apikey=9ac09008`)
+function  add_event(ids) {
+    const movies = root.childNodes
+    movies.forEach((movie, i) =>{
+        movie.addEventListener('click', (event)=>{
+            getDisplay(ids[i])
+        })
+    })
+}
+function getDisplay(id){
+    root.innerHTML = ""
+    fetch(` https://movieapp-zyqr.onrender.com/api/v1/details/${id}`)
     .then(res => res.json())
     .then(data => new MovieDisplay(data))
-    .catch(err=> console.error(err));
-
+    .catch(err=> console.error(err))
 }
 
-const initialize = () => {
-    const samples = ['batman', 'iron man', 'pirates of the caribbean'];
-
-    samples.forEach(item =>{
-        fetch(`http://www.omdbapi.com/?s=${item}&apikey=9ac09008`)
+function get_movies(uri, lim){
+        root.innerHTML = ""
+        const ids = []
+        fetch(uri)
         .then(res => res.json())
-        .then(data => Array(data)[0].Search)
-        .then(arr => {
-            arr.forEach(e=>{
-                if(e.Poster!=="N/A") new Movie(e);
-            });
+        .then(data => {
+            console.log(data.length)
+            const size = lim? 50: data.length
+            for(let i=0; i<size; i++){
+                if(data[i].profile_picture_url!='https://image.tmdb.org/t/p/w500')
+                {
+                    ids.push(data[i].id)
+                    new Movie(data[i])
+                }
+            }
         })
-        .catch(err => console.error(err))
-        .finally(()=>{
-            const movies = root.childNodes;
-            movies.forEach(movie =>{
-                movie.addEventListener('click', (event)=>{
-                    const title = event.target.childNodes[0].textContent;
-                    getDisplay(title);
-                });
-            });
-        });
-    });  
+        .catch(err => console.log(err))
+        .finally(()=> add_event(ids))
 }
-initialize();
-
-document.getElementById('submit').onclick = async function(){
-    try {
-        root.innerHTML = "";
-        const text = document.getElementById('searchbox').value;
-        const uri = `http://www.omdbapi.com/?s=${text}&apikey=9ac09008`;
-
-        const res = await fetch(uri);
-        const data = await res.json();
-        const movies = Array(data)[0].Search;
-
-        movies.forEach(e => {
-                if(e.Poster!=="N/A") new Movie(e);
-        });
-
-        root.childNodes.forEach(node => {
-            node.addEventListener('click', event =>{
-                const title = event.target.childNodes[0].textContent;
-                getDisplay(title);
-            });
-        });
-    } catch (err) {
-        console.error(err);
-    }
+function init(){
+    const uri = 'https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies'
+    get_movies(uri, true)
+ }
+document.getElementById('submit').onclick = ()=>{
+    
+    const text = document.getElementById('searchbox').value
+    const uri = `https://movieapp-zyqr.onrender.com/api/v1/movie_name/${text}`
+    get_movies(uri, false)
 }
+
+init()

@@ -6,6 +6,9 @@ body {
     justify-content: center;
     background-color: #000000;
 }
+#display-poster{
+    width: 33%;
+}
 .search-container{
     width: 30rem;
     margin: 1rem;
@@ -61,8 +64,4 @@ body {
 .title {
     font-size: large;
     font-weight: bolder;
-}
-
-.year {
- 
 }
