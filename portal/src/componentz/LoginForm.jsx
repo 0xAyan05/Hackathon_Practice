@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,6 +9,8 @@ const LoginForm = () => {
   };
 
   const handlePasswordChange = (event) => {
+    event.preventDefault();
+
     setPassword(event.target.value);
   };
 
@@ -18,9 +19,14 @@ const LoginForm = () => {
 
     console.log("Username:", username);
     console.log("Password:", password);
+
+    fetch("/api/verify")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((err) => console.error(err));
   };
-
-
 
   return (
     <div className="container">

@@ -76,6 +76,8 @@ a:hover {
 
 .logo {
     background-size: cover;
+    background-color: #fff;
+    border-radius: 100%;
     margin: auto 0;
     max-width: 20%;
     height: auto;
