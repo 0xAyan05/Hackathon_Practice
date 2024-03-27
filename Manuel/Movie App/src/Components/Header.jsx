@@ -10,7 +10,6 @@ function Header(){
     const targ = useRef()
     const inp = useRef()
     
-    if(times>0) console.log(targ.current)
     useEffect(()=>{
         times.current += 1
         if(times.current>2 && search!==""){
