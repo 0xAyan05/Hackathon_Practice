@@ -22,11 +22,16 @@ function Header(){
                 for(let i=0; i<8; i++){
                     new_data.push(filtered_data[i].title)
                 }
+
+                targ.current.style.backgroundColor = "#2a1455d2"
                 setData(new_data)
             })
             .catch(err => console.log(err))
         }
-        else setData([])
+        else { 
+            targ.current.style.backgroundColor = "transparent"
+            setData([]) 
+        }
     }, [search])
 
     return (
@@ -51,6 +56,7 @@ function Header(){
                             <li key={'suggestion'+i}>
                                 <button className='suggested-options' 
                                 onClick={(e)=>{
+                                    targ.current.style.backgroundColor = "transparent"
                                     inp.current.value = e.target.innerHTML
                                     setData([])
                                 }} >{title}</button>
