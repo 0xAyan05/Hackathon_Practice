@@ -40,3 +40,45 @@
     box-shadow: inset -5px -5px 8px #010142b1;
     border: transparent;
 }
+.suggestions{
+    gap: 0px;
+    top: 4.25rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 32.8rem;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: "1rem";
+    overflow: hidden;
+}
+.suggested-options{
+    border: none;
+    text-align: left;
+    margin: -2.5px;
+    padding: 10px 1rem;
+    background-color: transparent;
+    list-style: none;
+    color: white;
+    width: 98%;
+}
+.suggested-options:hover{
+    background-color: #7316ee45;
+}
+.suggestions li {
+    display: grid;
+    margin-top: -6.5px;
+    padding: .4rem;
+    place-items: center;
+    background-color: #2a1455d2;
+    height: 2rem;
+    position: relative;
+    list-style: none;
+}
+.suggestions li div {
+    background-color: #b099fbff;
+    z-index: 50;
+    width: 98%;
+    height: 2px;
+    margin: 1px;
+}

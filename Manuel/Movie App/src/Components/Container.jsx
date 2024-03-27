@@ -18,7 +18,7 @@ function Container(){
     }, [])
 
     return (
-        <div id="movies-container">
+        <div id="movies-container" >
             {
                 movie.map(e => <Movie mv={e}/>)
             }
