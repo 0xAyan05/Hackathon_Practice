@@ -1,0 +1,16 @@
+*, body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(130deg, #1f013b,#4707b68a,  #180e2e, #240b3e, #000024);
+}
+section{
+    background-color: transparent;
+    display: flex;
+}
