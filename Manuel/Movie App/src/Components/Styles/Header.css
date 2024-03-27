@@ -52,6 +52,7 @@
     overflow: hidden;
 }
 .suggested-options{
+    overflow-x: hidden;
     border: none;
     text-align: left;
     margin: -2.5px;
