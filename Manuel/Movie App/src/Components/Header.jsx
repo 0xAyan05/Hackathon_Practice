@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import './Styles/Header.css'
 
-function Header(){
+function Header(props){
     const [ search, setSearch ] = useState("")
     const [data, setData] = useState([])
 
@@ -65,7 +65,7 @@ function Header(){
                     </ul>
                     
                 <button className='search-btn' onClick={(e)=>{
-                    
+                    props.setUri(`https://movieapp-zyqr.onrender.com/api/v1/movie_name/${inp.current.value.toLocaleLowerCase()}`)
                 }}>Search</button>
                 </div>
 

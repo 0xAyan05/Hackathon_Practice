@@ -1,7 +1,7 @@
 .movie {
     border-radius: 10px;
     padding: 10px;
-    height: auto;
+    max-height: 19.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,10 +21,6 @@
    .movie:hover{
     background-color:#1f003c ;
    }
-.movie:hover {
-    transition: 0.2s;
-    background-color: #7620d22f;
-}
 .posters {
     height: 15rem;
     border-radius: 5px;

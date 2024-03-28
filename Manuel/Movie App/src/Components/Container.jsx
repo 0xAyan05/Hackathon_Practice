@@ -8,14 +8,11 @@ function Container(props){
     useEffect(()=>{
         axios.get(props.uri)
         .then(res => {
-            const data = []
-            for(let i=0; i<50; i++){
-                data.push(res.data[i])
-            }
+            const data = res.data.filter(dt => dt.profile_picture_url!='https://image.tmdb.org/t/p/w500')
             setMovie(data)
         })
         .catch(err => console.log(err))
-    }, [])
+    }, [props.uri])
 
     return (
         <div id="movies-container" >
