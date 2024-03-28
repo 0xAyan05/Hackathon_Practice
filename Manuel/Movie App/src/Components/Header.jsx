@@ -68,7 +68,9 @@ function Header(){
                     
                 <button className='search-btn' onClick={(e)=>{
                     targ.current.style.display = "none"
-                    window.open(`/search/${inp.current.value}`, '_self')
+                    if(inp.current.value !== "") 
+                        window.open(`/search/${inp.current.value}`, '_self')
+                    
                     inp.current.value = ""
                 }}>Search</button>
 
