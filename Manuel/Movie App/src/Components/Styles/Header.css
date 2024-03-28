@@ -58,6 +58,7 @@
     width: 32.8rem;
     border-radius: 10px;
     overflow: hidden;
+    background-color: #2a1455d2;
 }
 .suggested-options{
     overflow-x: hidden;

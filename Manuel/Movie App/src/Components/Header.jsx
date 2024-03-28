@@ -22,13 +22,13 @@ function Header(props){
                     new_data.push(filtered_data[i].title)
                 }
 
-                targ.current.style.backgroundColor = "#2a1455d2"
+                targ.current.style.display = "flex"
                 setData(new_data)
             })
             .catch(err => console.log(err))
         }
         else { 
-            targ.current.style.backgroundColor = "transparent"
+            targ.current.style.display = "none"
             setData([]) 
         }
     }, [search])
@@ -37,12 +37,13 @@ function Header(props){
         <>
         <nav className="navbar">
             <div>Logo</div>
-
+                
                 <div className='search-box'>
                    <input type="text" className='search-bar'
                         placeholder='Search'
                         ref={inp}
                         onChange={(e)=>{
+                            targ.current.style.display = "flex"
                             setSearch(e.target.value)}
                         }
                 />
@@ -54,7 +55,7 @@ function Header(props){
                             <li key={'suggestion'+i}>
                                 <button className='suggested-options' 
                                 onClick={(e)=>{
-                                    targ.current.style.backgroundColor = "transparent"
+                                    targ.current.style.display = "none"
                                     inp.current.value = e.target.innerHTML
                                     setData([])
                                 }} >{title}</button>
@@ -65,7 +66,9 @@ function Header(props){
                     </ul>
                     
                 <button className='search-btn' onClick={(e)=>{
+                    targ.current.style.display = "none"
                     props.setUri(`https://movieapp-zyqr.onrender.com/api/v1/movie_name/${inp.current.value.toLocaleLowerCase()}`)
+                    inp.current.value = ""
                 }}>Search</button>
                 </div>
 

@@ -4,15 +4,13 @@ import Container from "./Components/Container"
 import { useState } from "react"
 function App() {
   const [uri, setUri] = useState('https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies')
-
+  
   return (
     <>
     <Header setUri={setUri}/>
     <section>
       <Sidebar/>
-      <Container uri={uri}>
-  
-      </Container>
+      <Container uri={uri}/>
     </section>
     </>
   )
