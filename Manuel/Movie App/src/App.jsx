@@ -1,17 +1,34 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./Components/Header"
-import Sidebar from "./Components/Sidebar"
 import Container from "./Components/Container"
-import { useState } from "react"
+import Search from "./Endpoints/Search"
+import Sidebar from './Components/Sidebar'
 function App() {
-  const [uri, setUri] = useState('https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies')
+
+  const uri = 'https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies'
 
   return (
     <>
-    <Header setUri={setUri}/>
-    <section>
-      <Sidebar/>
-      <Container uri={uri}/>
-    </section>
+      <Router>
+        <Header />
+        <Routes>
+
+          <Route path="/" element={
+          <section>
+            <Sidebar />
+            <Container uri={uri} />
+          </section>
+          }/>
+
+          <Route path="/search/:title" element={
+          <section>
+            <Sidebar />
+            <Search />
+          </section>
+          } />
+
+        </Routes>
+      </Router>
     </>
   )
 }

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import './Styles/Header.css'
 
-function Header(props){
+function Header(){
     const [ search, setSearch ] = useState("")
     const [data, setData] = useState([])
 
@@ -39,7 +39,7 @@ function Header(props){
             <div>Logo</div>
                 
                 <div className='search-box'>
-                   <input type="text" className='search-bar'
+                  <input type="text" className='search-bar'
                         placeholder='Search'
                         ref={inp}
                         onChange={(e)=>{
@@ -67,10 +67,11 @@ function Header(props){
                     
                 <button className='search-btn' onClick={(e)=>{
                     targ.current.style.display = "none"
-                    props.setUri(`https://movieapp-zyqr.onrender.com/api/v1/movie_name/${inp.current.value.toLocaleLowerCase()}`)
+                    window.open(`/search/${inp.current.value}`, '_self')
                     inp.current.value = ""
                 }}>Search</button>
-                </div>
+
+            </div>
 
             <div>Account</div>
         </nav>

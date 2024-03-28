@@ -9,8 +9,8 @@
     background-color:#1a0125 ;
     text-decoration: none;
     color: #ffffff;
-    transition: all .2s ease-in;
-    animation-duration: 1s;
+    transition: all .5s ease-in;
+    animation-duration: .6s;
     animation-fill-mode: both;
     animation-name: move;
    }
