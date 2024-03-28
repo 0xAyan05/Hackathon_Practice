@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Styles/Header.css'
 
@@ -36,7 +37,7 @@ function Header(){
     return (
         <>
         <nav className="navbar">
-            <div>Logo</div>
+            <Link to={'/'} className='logo'>Logo</Link>
                 
                 <div className='search-box'>
                   <input type="text" className='search-bar'

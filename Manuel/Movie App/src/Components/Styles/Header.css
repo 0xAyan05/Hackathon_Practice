@@ -14,6 +14,11 @@
 .navbar div {
     background-color: transparent;
 }
+.logo{
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+}
 .search-box {
     background-color: transparent;
     width: 40rem;
