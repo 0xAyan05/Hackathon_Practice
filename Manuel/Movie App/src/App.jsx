@@ -3,10 +3,9 @@ import Header from "./Components/Header"
 import Container from "./Components/Container"
 import Search from "./Endpoints/Search"
 import Sidebar from './Components/Sidebar'
+
 function App() {
-
   const uri = 'https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies'
-
   return (
     <>
       <Router>
