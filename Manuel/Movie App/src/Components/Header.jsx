@@ -38,8 +38,7 @@ function Header(){
         <nav className="navbar">
             <div>Logo</div>
 
-                <div>
-                <form action="" className='search-box'>
+                <div className='search-box'>
                    <input type="text" className='search-bar'
                         placeholder='Search'
                         ref={inp}
@@ -65,9 +64,9 @@ function Header(){
 
                     </ul>
                     
-                <button className='search-btn'>Search</button>
-                
-                    </form>
+                <button className='search-btn' onClick={(e)=>{
+                    
+                }}>Search</button>
                 </div>
 
             <div>Account</div>

@@ -5,10 +5,12 @@
 }
 #root {
     height: 100vh;
+    filter: blur(5000);
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(130deg, #1f013b,#4707b68a,  #180e2e, #240b3e, #000024);
+    background: linear-gradient(130deg, #6424a195,#5a07ebbf,  #180e2e,#180e2e, #45038b, #000024);
 }
 section{
     background-color: transparent;
