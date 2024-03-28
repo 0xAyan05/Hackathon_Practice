@@ -10,10 +10,14 @@
     text-decoration: none;
     color: #ffffff;
    }
+.movie:hover {
+    transition: 0.2s;
+    background-color: #7620d22f;
+}
 .posters {
     height: 15rem;
     border-radius: 5px;
-    width: 12.5rem;
+    width: 11.5rem;
     margin-top: 10px;
 }
 .title {
