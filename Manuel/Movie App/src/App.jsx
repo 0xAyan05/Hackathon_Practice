@@ -7,7 +7,7 @@ function App() {
     <Header/>
     <section>
       <Sidebar/>
-      <Container >
+      <Container uri={'https://movieapp-zyqr.onrender.com/api/v1/nowplayingmovies'}>
   
       </Container>
     </section>
